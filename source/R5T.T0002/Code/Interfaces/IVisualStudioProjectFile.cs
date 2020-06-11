@@ -6,7 +6,7 @@ using R5T.T0003;
 using R5T.Ostersund;
 
 
-namespace R5T.T0002.Abstractions
+namespace R5T.T0002
 {
     public interface IVisualStudioProjectFile
     {
