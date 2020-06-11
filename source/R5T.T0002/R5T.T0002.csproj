@@ -4,4 +4,8 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <NoWarn>1701;1702;1591;1573</NoWarn>
   </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\R5T.Ostersund\source\R5T.Ostersund\R5T.Ostersund.csproj" />
+    <ProjectReference Include="..\..\..\R5T.T0003\source\R5T.T0003\R5T.T0003.csproj" />
+  </ItemGroup>
 </Project>
