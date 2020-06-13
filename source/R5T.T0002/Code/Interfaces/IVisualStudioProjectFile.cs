@@ -19,7 +19,12 @@ namespace R5T.T0002
         Settable<OutputType> OutputType { get; set; }
         Settable<TargetFramework> TargetFramework { get; set; }
 
-        IList<ProjectReference> ProjectReferences { get; }
-        IList<PackageReference> PackageReferences { get; }
+        IEnumerable<IProjectReference> ProjectReferences { get; }
+        void AddProjectReference(IProjectReference projectReference);
+        void RemoveProjectReference(IProjectReference projectReference);
+
+        IEnumerable<IPackageReference> PackageReferences { get; }
+        void AddPackageReference(IPackageReference packageReference);
+        void RemovePackageReference(IPackageReference packageReference);
     }
 }

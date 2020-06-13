@@ -3,7 +3,7 @@
 
 namespace R5T.T0002
 {
-    public class PackageReference
+    public class PackageReference : IPackageReference
     {
         public string Name { get; set; }
         // NOT a Version since packages can have version ranges, and/or suffixes ("-rc", "-beta1").

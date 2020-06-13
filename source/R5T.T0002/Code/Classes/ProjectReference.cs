@@ -3,7 +3,7 @@
 
 namespace R5T.T0002
 {
-    public class ProjectReference
+    public class ProjectReference : IProjectReference
     {
         public string ProjectFilePath { get; set; }
 
