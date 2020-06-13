@@ -21,10 +21,12 @@ namespace R5T.T0002
 
         IEnumerable<IProjectReference> ProjectReferences { get; }
         IProjectReference AddProjectReference(string projectFilePath);
-        void RemoveProjectReference(IProjectReference projectReference);
+        bool HasProjectReference(string projectFilePath, out IProjectReference projectReference);
+        bool RemoveProjectReference(IProjectReference projectReference);
 
         IEnumerable<IPackageReference> PackageReferences { get; }
         IPackageReference AddPackageReference(string name, string versionString);
-        void RemovePackageReference(IPackageReference packageReference);
+        bool HasPackageReference(string name, string versionString, out IPackageReference packageReference);
+        bool RemovePackageReference(IPackageReference packageReference);
     }
 }
