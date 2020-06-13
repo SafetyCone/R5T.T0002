@@ -20,11 +20,11 @@ namespace R5T.T0002
         Settable<TargetFramework> TargetFramework { get; set; }
 
         IEnumerable<IProjectReference> ProjectReferences { get; }
-        void AddProjectReference(IProjectReference projectReference);
+        IProjectReference AddProjectReference(string projectFilePath);
         void RemoveProjectReference(IProjectReference projectReference);
 
         IEnumerable<IPackageReference> PackageReferences { get; }
-        void AddPackageReference(IPackageReference packageReference);
+        IPackageReference AddPackageReference(string name, string versionString);
         void RemovePackageReference(IPackageReference packageReference);
     }
 }
