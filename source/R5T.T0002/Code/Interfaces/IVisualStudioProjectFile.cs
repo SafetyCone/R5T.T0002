@@ -26,7 +26,10 @@ namespace R5T.T0002
 
         IEnumerable<IPackageReference> PackageReferences { get; }
         IPackageReference AddPackageReference(string name, string versionString);
-        bool HasPackageReference(string name, string versionString, out IPackageReference packageReference);
+        /// <summary>
+        /// No need for a version string, because there cannot be multiple versions of the same package.
+        /// </summary>
+        bool HasPackageReference(string name, out IPackageReference packageReference);
         bool RemovePackageReference(IPackageReference packageReference);
     }
 }

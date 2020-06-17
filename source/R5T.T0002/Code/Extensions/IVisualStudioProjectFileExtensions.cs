@@ -28,9 +28,36 @@ namespace R5T.T0002
             return projectReference;
         }
 
+        public static bool HasPackageReference(this IVisualStudioProjectFile visualStudioProjectFile, string name, string versionString, out IPackageReference packageReference)
+        {
+            var hasPackageReferenceByName = visualStudioProjectFile.HasPackageReference(name, out packageReference);
+            if(!hasPackageReferenceByName)
+            {
+                return false;
+            }
+
+            var versionStringMatches = packageReference.VersionString == versionString;
+            if(versionStringMatches)
+            {
+                return true;
+            }
+            else
+            {
+                packageReference = PackageReferenceHelper.None;
+
+                return false;
+            }
+        }
+
         public static bool HasPackageReference(this IVisualStudioProjectFile visualStudioProjectFile, string name, string versionString)
         {
             var hasPackageReference = visualStudioProjectFile.HasPackageReference(name, versionString, out _);
+            return hasPackageReference;
+        }
+
+        public static bool HasPackageReference(this IVisualStudioProjectFile visualStudioProjectFile, string name)
+        {
+            var hasPackageReference = visualStudioProjectFile.HasPackageReference(name, out _);
             return hasPackageReference;
         }
 
@@ -40,9 +67,9 @@ namespace R5T.T0002
             return hasProjectReference;
         }
 
-        public static bool RemovePackageReference(this IVisualStudioProjectFile visualStudioProjectFile, string name, string versionString)
+        public static bool RemovePackageReference(this IVisualStudioProjectFile visualStudioProjectFile, string name)
         {
-            var hasPackageReference = visualStudioProjectFile.HasPackageReference(name, versionString, out var packageReference);
+            var hasPackageReference = visualStudioProjectFile.HasPackageReference(name, out var packageReference);
             if (!hasPackageReference)
             {
                 return false;
