@@ -1,0 +1,4 @@
+R5T.T0002.Extensions - An extensions library for the IVisualStudioProjectFile type.
+
+Goals
+
