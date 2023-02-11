@@ -43,7 +43,7 @@ namespace R5T.T0002
                 {
                     pathAccumulator.Add(projectFilePath);
 
-                    var projectFile = await visualStudioProjectFileSerializer.DeserializeAsync(projectFilePath);
+                    var projectFile = await visualStudioProjectFileSerializer.Deserialize(projectFilePath);
 
                     await projectFile.AccumulateDependencyProjectFilePathsRecursive(visualStudioProjectFileSerializer, pathAccumulator);
                 }
